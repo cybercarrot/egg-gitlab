@@ -6,5 +6,8 @@
  * @property {String} SOME_KEY - some description
  */
 exports.gitlab = {
-
+  client: {},
+  default: {},
+  app: true,
+  agent: false,
 };
