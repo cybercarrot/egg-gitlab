@@ -1,12 +1,12 @@
-import { Gitlab } from "@gitbeaker/node";
+import { Gitlab } from "@gitbeaker/core";
 
 declare module "egg" {
   // extend app
   interface Application {
-    gitlab: typeof Gitlab;
+    gitlab: InstanceType<typeof Gitlab>;
   }
 
-  type Client = {
+  type GitlabClient = {
     host: string;
     token: string;
   };
@@ -14,7 +14,7 @@ declare module "egg" {
   // extend your config
   interface EggAppConfig {
     gitlab: {
-      client: Client;
+      client: GitlabClient;
     };
   }
 }
